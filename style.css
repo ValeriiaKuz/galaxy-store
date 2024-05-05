@@ -55,6 +55,9 @@ body{
     font-size: 1.6rem;
     background-color: black;
     color: var(--text-color);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .header{
@@ -219,6 +222,7 @@ body{
     z-index: -1;
     background-size: contain;
     background-repeat: no-repeat ;
+    transition: all 0.5s ease-in;
 }
 
 .small-planet{
@@ -230,6 +234,7 @@ body{
     z-index: -1;
     background-size: contain;
     background-repeat: no-repeat ;
+    transition: all 0.5s ease-in;
 }
 
 @keyframes animatePlanet {
