@@ -1,0 +1,242 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter.ttf');
+}
+
+@font-face {
+    font-family: 'BodoniModa';
+    src: url('./assets/fonts/BodoniModa.ttf');
+}
+
+/* reset styles */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+button{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+/* styles */
+html{
+    font-size: 10px;
+}
+
+:root{
+   --accent-color: #e1d9d9;
+    --text-color:#e1d9d9
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    font-size: 1.6rem;
+    background-color: black;
+    color: var(--text-color);
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.logo_img{
+    width: 10rem;
+}
+
+.header_navigation{
+    padding: 0 5rem;
+}
+
+.header_navigation_list{
+    display: flex;
+    flex-direction: row;
+    gap:10rem
+}
+
+.header_navigation_list_item{
+    position: relative;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+.content_wrapper{
+    height: 100vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(0,212,255,0) 100%);
+    border-left: 1px solid rgba(225, 217, 217, 0.2);
+    border-right: 1px solid rgba(225, 217, 217, 0.2);
+    padding: 0 2rem;
+}
+
+.main-title{
+    width: 70vw;
+    font-family: 'BodoniModa', sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    padding-bottom: 5rem;
+    transform: translateX(-8rem);
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    gap:5rem;
+}
+
+.login_input{
+    border-bottom: 0.8px solid var(--accent-color);
+    padding: 1rem;
+    color: var(--text-color);
+    letter-spacing: 0.15rem;
+}
+
+.login_button{
+    width: max-content;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    letter-spacing: 0.15rem;
+    margin-left: auto;
+    position: relative;
+}
+
+
+.underline::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: -1rem;
+    left: 0;
+    font-weight: 200;
+    background-color: var(--text-color);
+    transform: scaleX(0);
+    transform-origin: top right;
+    transition: transform 0.35s ease-in;
+}
+
+.underline:hover::before {
+    transform: scaleX(1);
+}
+.planets_list{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.planet{
+    appearance: none;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-repeat: repeat-x;
+    background-size: cover;
+    filter: grayscale(1);
+    animation-fill-mode: both;
+    animation: animatePlanet 15s linear infinite reverse paused;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.planet_item:hover .planet{
+    filter: grayscale(0);
+    animation-play-state: running;
+}
+.mars:checked, .venus:checked , .earth:checked{
+    filter: grayscale(0);
+    animation-play-state: running;
+}
+
+.mars{
+    background-image: url("./assets/images/марс_плоский.jpg");
+}
+.venus{
+    background-image: url("./assets/images/венера_плоская.jpeg");
+}
+.earth{
+    background-image: url("./assets/images/земля_плоская.jpeg");
+}
+.planet_item{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    max-width: max-content;
+}
+.planet_name{
+    display: inline-block;
+    width: 5rem;
+}
+
+.big-planet{
+    position: absolute;
+    right: -15vh;
+    bottom: 6rem;
+    height: 85vh;
+    width: 85vh;
+    z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat ;
+}
+
+.small-planet{
+    position: absolute;
+    left: -6vh;
+    bottom: -20rem;
+    height: 60vh;
+    width: 60vh;
+    z-index: -1;
+    background-size: contain;
+    background-repeat: no-repeat ;
+}
+
+@keyframes animatePlanet {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
+}

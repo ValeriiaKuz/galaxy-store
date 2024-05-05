@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galactic Store</title>
+    <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <img  class="logo_img" src="./assets/images/logo.png" alt="logo">
+        </a>
+        <nav class="header_navigation" >
+            <ul class="header_navigation_list">
+                <li class="header_navigation_list_item">
+                    <a href="#" class="underline">_ABOUT US</a>
+                </li>
+                <li class="header_navigation_list_item">
+                    <a href="#" class="underline">_ABOUT SHOP</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="big-planet"></div>
+    <div class="small-planet"></div>
+    <main class="main">
+        <aside class="sidebar">
+            <form class="planets_form">
+                <ul class="planets_list">
+                    <label class="planet_item">
+                        <span class="planet_name">__MARS</span>
+                        <input class="planet mars" type="radio" value="mars" name="planet">
+                    </label>
+                    <label class="planet_item">
+                        <span class="planet_name">__EARTH</span>
+                        <input class="planet earth" type="radio" value="earth" name="planet">
+                    </label>
+                    <label class="planet_item">
+                        <span class="planet_name">__VENUS</span>
+                        <input class="planet venus" type="radio" value="venus" name="planet">
+                    </label>
+                </ul>
+            </form>
+        </aside>
+
+        <section class="content">
+            <div class="content_wrapper">
+                <h1 class="main-title">Welcome to the future</h1>
+                <form class="login_form">
+                    <input class="login_input" type="email" placeholder="Email" required>
+                    <input class="login_input" type="password" placeholder="Password" required>
+                    <button class="login_button underline" type="submit">
+                        LOGIN
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+<script src="./index.js" defer></script>
+</body>
+</html>
